@@ -78,7 +78,8 @@ Proof.
 Qed.
 
 Lemma weak_coincidence I I' s : (forall X, I X =i I' X) -> satisfies I s -> satisfies I' s.
-Proof. move => H. by rewrite (@coincidence I I' s). Qed.
+Proof. move => H. rewrite (@coincidence I I' s) //. by hnf.
+Qed.
 
 (** ** Language-Theoretic Interpretation *)
 
